@@ -1,0 +1,33 @@
+                            precision    recall  f1-score   support
+
+           Apple Scab Leaf       0.54      0.70      0.61        10
+       Corn Gray leaf spot       0.00      0.00      0.00         3
+  Potato leaf early blight       0.40      0.50      0.44         8
+   Potato leaf late blight       0.43      0.43      0.43         7
+Squash Powdery mildew leaf       1.00      0.86      0.92         7
+  Tomato Early blight leaf       0.27      0.33      0.30         9
+ Tomato Septoria leaf spot       0.44      0.70      0.54        10
+                apple leaf       0.58      0.78      0.67         9
+           apple rust leaf       1.00      0.70      0.82        10
+          bell pepper leaf       0.57      0.57      0.57         7
+     bell pepper leaf spot       0.33      0.11      0.17         9
+            blueberry leaf       0.57      0.36      0.44        11
+               cherry leaf       0.83      0.50      0.62        10
+            corn rust leaf       0.89      0.80      0.84        10
+                grape leaf       0.89      0.80      0.84        10
+      grape leaf black rot       1.00      0.75      0.86         8
+       leaf blight of corn       0.60      0.50      0.55        12
+                peach leaf       0.86      0.67      0.75         9
+            raspberry leaf       0.88      1.00      0.93         7
+             soyabean leaf       0.58      0.88      0.70         8
+           strawberry leaf       0.89      1.00      0.94         8
+               tomato leaf       0.50      0.25      0.33         8
+tomato leaf bacterial spot       0.15      0.20      0.17        10
+   tomato leaf late blight       0.55      0.60      0.57        10
+  tomato leaf mosaic virus       0.86      0.60      0.71        10
+  tomato leaf yellow virus       0.62      0.83      0.71         6
+          tomato mold leaf       0.33      0.33      0.33         6
+
+                  accuracy                           0.59       232
+                 macro avg       0.61      0.58      0.58       232
+              weighted avg       0.63      0.59      0.60       232
