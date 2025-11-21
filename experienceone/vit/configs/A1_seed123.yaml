@@ -1,0 +1,24 @@
+# A1_seed123: ViT-B/16 head-only fine-tuning with HIGHER lr (lr=1e-3) for verification
+# Purpose: Verify if low performance of A1 is due to lr being too small
+experiment_name: "A1_seed123"
+model_name: "vit_base_patch16_224.augreg_in1k"
+num_classes: 27
+freeze_mode: "head_only"
+use_randaugment: false
+no_basic_aug: false
+save_dir: "outputs/checkpoints/A1_seed123"
+train_csv: "data/splits/train.csv"
+val_csv: "data/splits/val.csv"
+num_workers: 4
+use_amp: true
+sched: "cosine"
+min_lr: 0.00001
+seed: 123
+
+# Training params
+epochs: 20
+batch_size: 32
+lr: 0.001  # 🔴 提高 10 倍学习率进行验证
+warmup_epochs: 2
+weight_decay: 0.05
+label_smoothing: 0.1

@@ -1,0 +1,23 @@
+# D2: EfficientNet-B0 full fine-tuning with basic augmentation (lr=1e-4)
+experiment_name: "D2"
+model_name: "efficientnet_b0"
+num_classes: 27
+freeze_mode: "full"
+use_randaugment: false
+no_basic_aug: false
+save_dir: "outputs/checkpoints/D2"
+train_csv: "data/splits/train.csv"
+val_csv: "data/splits/val.csv"
+num_workers: 4
+use_amp: true
+sched: "cosine"
+min_lr: 0.000001
+seed: 42
+
+# Training params
+epochs: 20
+batch_size: 32
+lr: 0.0001
+warmup_epochs: 2
+weight_decay: 0.05
+label_smoothing: 0.1

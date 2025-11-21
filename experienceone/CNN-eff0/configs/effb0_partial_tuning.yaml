@@ -1,0 +1,78 @@
+experiment:
+  name: effb0_partial_tuning
+  seed: 42
+
+device: cuda
+amp: true
+
+data:
+  dataset: PlantDoc
+  image_root: data/PlantDoc
+  train_csv: data/splits/train.csv
+  val_csv: data/splits/val.csv
+  test_csv: data/splits/test.csv
+  label_map: data/splits/label_map.json
+  num_classes: 27
+  batch_size: 32
+  num_workers: 4
+  balanced_sampler: false
+
+augment:
+  basic: true
+  randaugment: false
+  img_size: 224
+  val_resize: 256
+  val_center_crop: 224
+  color_jitter: [0.2, 0.2, 0.2, 0.1]
+  hflip: 0.5
+  mixup: 0.0
+  cutmix: 0.0
+  label_smoothing: 0.1
+
+model:
+  arch: efficientnet_b0
+  pretrained: true
+  num_classes: 27
+  drop_rate: 0.2
+  drop_path_rate: 0.0
+
+train:
+  strategy: partial            # 自定义标签，方便脚本分支
+  epochs:
+    stage1: 5                  # 先仅训head少量epoch
+    stage2: 20                 # 再部分解冻训练
+  freeze_backbone_stage1: true
+  stage2_enabled: true
+  partial_unfreeze: true
+  # 针对torchvision EfficientNet: features[0..7]；解冻后2个stage
+  unfreeze_regex: ["features.6.*", "features.7.*"]
+  grad_clip_norm: 1.0
+
+optimizer:
+  name: adamw
+  stage1:
+    lr: 0.001                 # head-only更大学习率
+    weight_decay: 0.0001
+  stage2:
+    lr_backbone: 0.00005      # 解冻层较小lr
+    lr_head: 0.0005
+    weight_decay: 0.0001
+
+scheduler:
+  name: cosine
+  warmup_epochs: 2
+  min_lr: 1.0e-06
+
+loss:
+  name: cross_entropy
+
+evaluation:
+  metrics: [accuracy, macro_f1, macro_precision, macro_recall]
+  save_confusion_matrix: true
+  save_classification_report: true
+
+logging:
+  output_dir: outputs/effb0_partial_tuning
+  save_best_by: val/accuracy
+  save_last: true
+  results_csv: outputs/experiment_results.csv

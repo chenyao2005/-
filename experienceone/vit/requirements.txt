@@ -1,0 +1,17 @@
+# Core deep learning libraries
+torch
+torchvision
+timm
+
+# Data manipulation and analysis
+pandas
+scikit-learn
+
+# Visualization
+matplotlib
+seaborn
+
+# Utilities
+tqdm
+Pillow
+PyYAML

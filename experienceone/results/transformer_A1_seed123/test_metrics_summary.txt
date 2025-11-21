@@ -1,0 +1,4 @@
+Test Accuracy: 0.5603
+Test F1 (Macro): 0.5486
+Test F1 (Micro): 0.5603
+Test Top-3 Accuracy: 0.8319

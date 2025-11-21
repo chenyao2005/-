@@ -1,0 +1,70 @@
+experiment:
+  name: effb0_baseline
+  seed: 42
+
+device: cuda
+amp: true
+
+data:
+  dataset: PlantDoc
+  image_root: data/PlantDoc
+  train_csv: data/splits/train.csv
+  val_csv: data/splits/val.csv
+  test_csv: data/splits/test.csv
+  label_map: data/splits/label_map.json
+  num_classes: 27
+  batch_size: 32
+  num_workers: 4
+  balanced_sampler: false
+
+augment:
+  basic: true               # RandomResizedCrop(224), HorizontalFlip, ColorJitter, Normalize(ImageNet)
+  randaugment: false        # 开关强增强（RandAugment/AutoAugment）
+  img_size: 224
+  val_resize: 256
+  val_center_crop: 224
+  color_jitter: [0.2, 0.2, 0.2, 0.1]
+  hflip: 0.5
+  mixup: 0.0
+  cutmix: 0.0
+  label_smoothing: 0.1
+
+model:
+  arch: efficientnet_b0     # timm/torchvision 皆可，对应EfficientNet-B0
+  pretrained: true
+  num_classes: 27
+  drop_rate: 0.2
+  drop_path_rate: 0.0
+
+train:
+  epochs:
+    stage1: 10              # 仅训练分类头
+    stage2: 20              # 全量微调
+  freeze_backbone_stage1: true
+  stage2_enabled: true
+  grad_clip_norm: 1.0
+
+optimizer:
+  name: adamw
+  stage1:
+    lr: 0.0005              # lr1=5e-4（对齐你们ResNet最佳组合思想）
+    weight_decay: 0.0001
+  stage2:
+    lr: 0.00005             # lr2=5e-5
+    weight_decay: 0.0001
+
+scheduler:
+  name: cosine
+  warmup_epochs: 2
+  min_lr: 1.0e-06
+
+evaluation:
+  metrics: [accuracy, macro_f1, macro_precision, macro_recall]
+  save_confusion_matrix: true
+  save_classification_report: true
+
+logging:
+  output_dir: outputs/effb0_baseline
+  save_best_by: val/accuracy
+  save_last: true
+  results_csv: outputs/experiment_results.csv

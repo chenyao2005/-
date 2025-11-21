@@ -1,0 +1,8 @@
+torch>=2.1
+torchvision>=0.16
+numpy>=1.23
+pandas>=1.5
+scikit-learn>=1.1
+PyYAML>=6.0
+tqdm>=4.64
+opencv-python>=4.7

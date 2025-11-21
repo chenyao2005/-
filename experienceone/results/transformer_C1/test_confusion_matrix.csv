@@ -1,0 +1,28 @@
+,Apple Scab Leaf,Corn Gray leaf spot,Potato leaf early blight,Potato leaf late blight,Squash Powdery mildew leaf,Tomato Early blight leaf,Tomato Septoria leaf spot,apple leaf,apple rust leaf,bell pepper leaf,bell pepper leaf spot,blueberry leaf,cherry leaf,corn rust leaf,grape leaf,grape leaf black rot,leaf blight of corn,peach leaf,raspberry leaf,soyabean leaf,strawberry leaf,tomato leaf,tomato leaf bacterial spot,tomato leaf late blight,tomato leaf mosaic virus,tomato leaf yellow virus,tomato mold leaf
+Apple Scab Leaf,6,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2
+Corn Gray leaf spot,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3,0,0,0,0,0,0,0,0,0,0
+Potato leaf early blight,0,0,5,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1
+Potato leaf late blight,1,0,2,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,0,0,0
+Squash Powdery mildew leaf,0,0,0,0,7,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Tomato Early blight leaf,0,0,1,0,0,4,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3,0,0,0,0
+Tomato Septoria leaf spot,1,0,0,0,0,0,9,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+apple leaf,0,0,0,0,0,0,0,6,0,0,0,1,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0
+apple rust leaf,2,0,0,0,0,0,0,0,8,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+bell pepper leaf,0,0,0,0,0,0,0,0,0,1,0,2,0,0,1,0,0,1,0,1,0,1,0,0,0,0,0
+bell pepper leaf spot,0,0,0,0,0,1,2,0,0,0,4,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1
+blueberry leaf,0,0,0,0,0,0,0,0,0,0,0,7,1,0,0,0,0,2,0,1,0,0,0,0,0,0,0
+cherry leaf,0,0,0,0,1,0,0,2,0,0,0,1,5,0,0,0,0,1,0,0,0,0,0,0,0,0,0
+corn rust leaf,0,0,0,0,0,0,0,0,0,0,0,0,0,9,0,0,1,0,0,0,0,0,0,0,0,0,0
+grape leaf,0,0,0,0,0,0,0,0,0,0,0,0,1,0,9,0,0,0,0,0,0,0,0,0,0,0,0
+grape leaf black rot,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,6,0,0,0,0,0,0,0,0,0,0,0
+leaf blight of corn,0,5,0,0,0,0,0,0,0,0,0,0,0,1,0,0,6,0,0,0,0,0,0,0,0,0,0
+peach leaf,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,8,0,0,0,0,0,0,0,0,0
+raspberry leaf,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3,0,4,0,0,0,0,0,0
+soyabean leaf,0,0,0,0,0,0,0,0,0,0,0,3,0,0,0,0,0,1,1,2,0,1,0,0,0,0,0
+strawberry leaf,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,8,0,0,0,0,0,0
+tomato leaf,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,2,0,0,3,1,0,0,0,1
+tomato leaf bacterial spot,0,0,0,1,0,0,4,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,4,0,0,1,0
+tomato leaf late blight,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,6,0,0,0
+tomato leaf mosaic virus,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,1,2,4
+tomato leaf yellow virus,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,5,0
+tomato mold leaf,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,3

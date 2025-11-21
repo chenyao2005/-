@@ -1,0 +1,70 @@
+experiment:
+  name: effb0_from_scratch
+  seed: 42
+
+device: cuda
+amp: true
+
+data:
+  dataset: PlantDoc
+  image_root: data/PlantDoc
+  train_csv: data/splits/train.csv
+  val_csv: data/splits/val.csv
+  test_csv: data/splits/test.csv
+  label_map: data/splits/label_map.json
+  num_classes: 27
+  batch_size: 32
+  num_workers: 4
+  balanced_sampler: false
+
+augment:
+  basic: true
+  randaugment: false
+  img_size: 224
+  val_resize: 256
+  val_center_crop: 224
+  color_jitter: [0.2, 0.2, 0.2, 0.1]
+  hflip: 0.5
+  mixup: 0.0
+  cutmix: 0.0
+  label_smoothing: 0.0
+
+model:
+  arch: efficientnet_b0
+  pretrained: false           # 关键：从零训练对照
+  num_classes: 27
+  drop_rate: 0.2
+  drop_path_rate: 0.0
+
+train:
+  epochs:
+    stage1: 0                 # 无需阶段化
+    stage2: 30
+  freeze_backbone_stage1: false
+  stage2_enabled: true
+  grad_clip_norm: 1.0
+
+optimizer:
+  name: adamw
+  stage2:
+    lr: 0.001                 # 从零训练较大学习率
+    weight_decay: 0.0005
+
+scheduler:
+  name: cosine
+  warmup_epochs: 3
+  min_lr: 1.0e-06
+
+loss:
+  name: cross_entropy
+
+evaluation:
+  metrics: [accuracy, macro_f1, macro_precision, macro_recall]
+  save_confusion_matrix: true
+  save_classification_report: true
+
+logging:
+  output_dir: outputs/effb0_from_scratch
+  save_best_by: val/accuracy
+  save_last: true
+  results_csv: outputs/experiment_results.csv
